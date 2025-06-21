@@ -11,6 +11,8 @@
 
 ## ✨ 功能简介
 
+![img.png](https://github.com/noNu1L/message-box-system/blob/master/document/images/v0.1.0.png?raw=true)
+
 - **统一消息入口**: 提供简洁的 HTTP API，可通过 GET 或 POST 请求轻松推送消息。
 - **多通道分发**: 通过唯一的 **通道代码 (ChannelCode)** 识别消息来源，并将其路由到不同的接收组。
 - **灵活的接收配置**:
