@@ -1,0 +1,4 @@
+# 临时切回官方 crates.io 源，解决 tauri 2.5.1 依赖拉取问题
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+# 其他镜像源已注释或删除，仅用官方源 

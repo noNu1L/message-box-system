@@ -1,0 +1,37 @@
+version: '3'
+services:
+  message-box-core:
+    image: openjdk:17-jdk-slim
+    container_name: message-box-core
+    ports:
+#      - 后端端口： 8675
+      - "8675:8675"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./message-box-core.jar:/message-box-core.jar
+    entrypoint:
+      - java
+      - -jar
+      - /message-box-core.jar
+      - --ex.datasource.ip=192.168.67.100
+      - --ex.datasource.port=3306
+      - --ex.datasource.name=ex
+      - --ex.datasource.username=root
+      - --ex.datasource.password=database@2021
+
+  message-box-web:
+    image: nginx:latest
+    container_name: message-box-web
+    ports:
+#      - 前端管理端口：9675
+      - "9675:80"
+    volumes:
+      - ./web:/usr/share/nginx/html
+      - ./nginx-conf/default.conf:/etc/nginx/conf.d/default.conf
+    environment:
+      - TZ=Asia/Shanghai
+
+networks:
+  default:
+    driver: bridge
