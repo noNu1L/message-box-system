@@ -19,8 +19,7 @@
   - **邮件接收**: 可配置多个接收邮箱地址，将消息作为邮件发送。
   - **客户端接收**: 支持桌面客户端，通过 WebSocket 实时接收并弹出通知。
 - **可配置的发件服务**: 支持自定义配置发件邮箱的 SMTP 服务。
-- **Web管理后台**: 提供友好的Web界面，用于管理用户、收发配置和查看发送记录。
-- **跨平台桌面客户端**: 基于 Tauri 构建，轻量、高效，可实时接收消息提醒。
+- **Web管理后台**: 用于~~管理用户~~、收发配置和查看发送记录。
 
 ## 🏛️ 系统架构
 
@@ -103,7 +102,7 @@ cd message-box-core
 mvn spring-boot:run
 ```
 
-当您在控制台看到 `Started MsgBoxServiceApplication in ... seconds` 时，表示后端服务已成功启动（默认端口为 `8080`）。
+当您在控制台看到 `Started MsgBoxServiceApplication in ... seconds` 时，表示后端服务已成功启动（默认端口为 `8675`）。
 
 ### 4. 启动Web管理后台
 
@@ -120,7 +119,7 @@ npm install
 npm run serve
 ```
 
-Web后台将运行在 `http://localhost:8081` (或终端提示的其它端口)。
+Web后台将运行在 `http://localhost:8080` (或终端提示的其它端口)。
 
 ### 5. 启动桌面客户端
 

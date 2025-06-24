@@ -3,6 +3,7 @@ server:
 ex:
   application:
     name: message-box-core
+#    数据库配置
   datasource:
     ip: 192.168.67.100
     port: 3306
@@ -10,4 +11,5 @@ ex:
     username: root
     password: database@2021
   thread-pool:
+#    消息发送线程数
     message-push-size: 10
