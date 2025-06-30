@@ -1,0 +1,26 @@
+version: '3'
+services:
+  message-box-core:
+    image: openjdk:17-jdk-slim
+    container_name: message-box-core
+    ports:
+      - "8675:8675"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./message-box-core.jar:/message-box-core.jar
+    entrypoint:
+      java -jar /message-box-core.jar
+      --spring.profiles.active=prod
+      --ex.datasource.ip=192.168.67.100
+      --ex.datasource.port=3306
+      --ex.datasource.name=ex
+      --ex.datasource.username=root
+      --ex.datasource.password=database@2021
+  mail-push-box-web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx
+      - ./conf.d:/etc/nginx/conf.d
